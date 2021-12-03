@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import {  Nav, Navbar } from "react-bootstrap";
 import logo from "../../../images/logo1.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../../App";
 
 const Navigation = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [loggedInUser] = useContext(UserContext);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">

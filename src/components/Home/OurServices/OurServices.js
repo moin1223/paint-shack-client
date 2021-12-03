@@ -10,7 +10,7 @@ const OurServices = () => {
 
 
   useEffect(() => {
-    fetch(`/service`)
+    fetch(`https://rocky-caverns-28961.herokuapp.com/service`)
     .then(res => res.json())
     .then(data => {
       console.log(data);

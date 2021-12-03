@@ -22,7 +22,7 @@ const HeaderMain = () => {
                     return (
                       <span
                         key={key}
-                        style={{ color: "#800080", letterSpacing: "8px" }}
+                        style={{ color: "#ffc107", letterSpacing: "8px" }}
                       >
                         {char}
                       </span>

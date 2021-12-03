@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap";
 import logo from "../../../images/logo1.png";
 
 const Login = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [setLoggedInUser] = useContext(UserContext);
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
@@ -57,7 +57,7 @@ const Login = () => {
               <div className="text-center">
                 <img style={{ width: "100px" }} src={logo} alt="" />
               </div>
-              <h1 className="text-center text-danger">ROXCE</h1>
+              <h1 className="text-center text-danger">PHAIT SHACK</h1>
               <h3 className="text-center text-primary">
                 Painting <span className="text-secondary">Service</span>
               </h3>
