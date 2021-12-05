@@ -5,7 +5,7 @@ import { UserContext } from "../../../App";
 import jwt_decode from "jwt-decode";
 
 const PrivateRoute = ({ children, ...rest }) => {
-  const [loggedInUser] = useContext(UserContext);
+ const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const isLoggedIn = () => {
     const token = sessionStorage.getItem("token");
