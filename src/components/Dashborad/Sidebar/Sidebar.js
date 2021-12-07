@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { faCalendar, faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import {
   faAddressBook,
@@ -13,10 +13,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import { faAccessibleIcon } from "@fortawesome/free-brands-svg-icons";
-import { UserContext } from "../../../App";
+// import { UserContext } from "../../../App";
 
 const Sidebar = () => {
-  const [loggedInUser] = useContext(UserContext);
+  
+  const user = JSON.parse(localStorage.getItem('user'));
+
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -24,11 +26,11 @@ const Sidebar = () => {
       .then((res) => res.json())
       .then((data) => {
         const checkAdmin = data.find(
-          (checkingPerson) => checkingPerson.email === loggedInUser.email
+          (checkingPerson) => checkingPerson.email === user.email
         );
         setIsAdmin(checkAdmin);
       });
-  }, [loggedInUser.email]);
+  }, [user.email]);
 
   return (
     <div

@@ -9,7 +9,7 @@ import Dashboard from "./components/Dashborad/Dashboard/Dashboard";
 import ManageProducts from "./components/Dashborad/ManageProducts/ManageProducts";
 import Shipment from "./components/Dashborad/Shipment/Shipment";
 import Checkout from "./components/Dashborad/Checkout/Checkout";
-import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import PrivateRoute from "./components/Login/Login/PrivateRoute";
 import BookingList from "./components/BookingList/BookingList";
 import AllBookings from "./components/AllBookings/AllBookings";
 import Payment from "./components/Dashborad/Payment/Payment";

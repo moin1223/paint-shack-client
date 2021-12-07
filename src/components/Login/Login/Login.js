@@ -1,52 +1,39 @@
-import React from "react";
-import firebase from "firebase/app";
-import "firebase/auth";
-import firebaseConfig from "./firebase.config";
-import { useHistory, useLocation } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../../../App";
 import { Button } from "react-bootstrap";
 import logo from "../../../images/logo1.png";
+import firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from './firebaseConfig';
+import { useHistory, useLocation } from 'react-router';
+import { useState } from "react";
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 
 const Login = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const history = useHistory();
-  const location = useLocation();
-  const { from } = location.state || { from: { pathname: "/" } };
 
-  if (firebase.apps.length === 0) {
-    firebase.initializeApp(firebaseConfig);
-  }
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-  const handleGoogleSignIn = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(function (result) {
-        const { displayName, email } = result.user;
-        const signedInUser = { name: displayName, email };
-        setLoggedInUser(signedInUser);
-        storeAuthToken();
-      })
-      .catch(function (error) {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  };
+    const history = useHistory();
+    const location = useLocation();
+    const [setError] = useState('');
 
-  const storeAuthToken = () => {
-    firebase
-      .auth()
-      .currentUser.getIdToken(/* forceRefresh */ true)
-      .then(function (idToken) {
-        sessionStorage.setItem("token", idToken);
-        history.replace(from);
-      })
-      .catch(function (error) {
-        // Handle error
-      });
-  };
+    let { from } = location.state || { from: { pathname: "/" } };
+
+    const handleGoogleSignIn = () => {
+        firebase.auth()
+            .signInWithPopup(googleProvider)
+            .then((result) => {
+                const user = result.user;
+                const loggedInUser = { name: user.displayName, email: user.email, img: user.photoURL };
+                localStorage.setItem('user', JSON.stringify(loggedInUser));
+                history.replace(from);
+            }).catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+            });
+    }
+
 
   return (
     <div>

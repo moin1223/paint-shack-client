@@ -2,11 +2,11 @@ import React from "react";
 import {  Nav, Navbar } from "react-bootstrap";
 import logo from "../../../images/logo1.png";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../../../App";
+// import { useContext } from "react";
+// import { UserContext } from "../../../App";
 
 const Navigation = () => {
-  const [loggedInUser] = useContext(UserContext);
+  // const [loggedInUser] = useContext(UserContext);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
@@ -24,20 +24,18 @@ const Navigation = () => {
             Dashboard
           </Link>
 
-          {loggedInUser.email ? (
+          {/* {loggedInUser.email ? (
             <>
-              {/* <Nav.Link>{loggedInUser.email}</Nav.Link> */}
+             
               <Link className="text-white mr-5" to="/login">Logout ({loggedInUser.name})</Link>
             </>
-          ) : (
-            //  onClick={signOut}
+          ) : ( */}
+           
             <Link className="text-white mr-5" to="/login">
               Login
             </Link>
-          )}
-          {/* <Link className="text-white mr-5" to="/login">
-            Login
-          </Link> */}
+          {/* )}
+       */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
