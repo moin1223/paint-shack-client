@@ -25,7 +25,7 @@ const Testimonials = () => {
   
 
   useEffect(() => {
-    fetch('https://paint-shack-server.vercel.app//reviewList')
+    fetch('https://paint-shack-server.vercel.app/reviewList')
     .then(res => res.json())
     .then(data => {
       console.log(data);

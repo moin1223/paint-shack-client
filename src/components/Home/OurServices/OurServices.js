@@ -10,7 +10,7 @@ const OurServices = () => {
 
 
   useEffect(() => {
-    fetch(`https://paint-shack-server.vercel.app//service`)
+    fetch(`https://paint-shack-server.vercel.app/service`)
     .then(res => res.json())
     .then(data => {
       console.log(data);

@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() =>{
-        fetch(`https://paint-shack-server.vercel.app//service`)
+        fetch(`https://paint-shack-server.vercel.app/service`)
         .then(res => res.json())
         .then(data => setServices(data))
     }, [services])

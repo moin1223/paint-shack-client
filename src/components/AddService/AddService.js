@@ -17,7 +17,7 @@ const AddService = () => {
     };
     console.log(eventData);
 
-    const url = `https://paint-shack-server.vercel.app//addService`;
+    const url = `https://paint-shack-server.vercel.app/addService`;
 
     if (imageURL !== null) {
       fetch(url, {

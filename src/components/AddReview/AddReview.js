@@ -19,7 +19,7 @@ const AddReview = () => {
     };
     console.log(eventData);
 
-    const url = `https://paint-shack-server.vercel.app//addReview`;
+    const url = `https://paint-shack-server.vercel.app/addReview`;
 
     if (imageURL !== null) {
       fetch(url, {

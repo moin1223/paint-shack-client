@@ -6,7 +6,7 @@ import { Table } from "react-bootstrap";
 const ManageProduct = ({ services }) => {
 
     const handleDeleteProduct = (id) =>{
-        fetch(`https://paint-shack-server.vercel.app//delete/${id}`,{
+        fetch(`https://paint-shack-server.vercel.app/delete/${id}`,{
           method: "DELETE"
         })
         .then(res => res.json())
