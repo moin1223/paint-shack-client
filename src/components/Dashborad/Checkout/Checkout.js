@@ -12,7 +12,7 @@ const Checkout = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`https://rocky-caverns-28961.herokuapp.com/singleService/${id}`)
+    fetch(`https://paint-shack-server.vercel.app//singleService/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCheckout(data[0]);

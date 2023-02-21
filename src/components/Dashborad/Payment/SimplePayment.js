@@ -34,7 +34,7 @@ const SimplePayment = () => {
       setPaymentSuccess(paymentMethod.id);
 
       if (paymentMethod.id) {
-        fetch(`https://rocky-caverns-28961.herokuapp.com/placeOrder`, {
+        fetch(`https://paint-shack-server.vercel.app//placeOrder`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

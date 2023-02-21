@@ -16,7 +16,7 @@ const AddService = () => {
     };
     console.log(eventData);
 
-    const url = `https://rocky-caverns-28961.herokuapp.com/addService`;
+    const url = `https://paint-shack-server.vercel.app//addService`;
 
     if (imageURL !== null) {
       fetch(url, {

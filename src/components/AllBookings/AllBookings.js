@@ -7,7 +7,7 @@ const AllBookings = () => {
   const [orders, setOrders] = useState([]);
 
   const loadData = () => {
-    fetch(`https://rocky-caverns-28961.herokuapp.com/orderList`)
+    fetch(`https://paint-shack-server.vercel.app//orderList`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +22,7 @@ const AllBookings = () => {
   const handleChange = (id) => {
     const updateStat = document.getElementById(`status-${id}`).value;
 
-    fetch(`https://rocky-caverns-28961.herokuapp.com/updateStatus/${id}`, {
+    fetch(`https://paint-shack-server.vercel.app//updateStatus/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: updateStat }),

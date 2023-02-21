@@ -13,7 +13,7 @@ const SingleOrder = () => {
     const { orderId } = useParams();
 
     useEffect(() => {
-        fetch(`https://rocky-caverns-28961.herokuapp.com/singleOrder/${orderId}`)
+        fetch(`https://paint-shack-server.vercel.app//singleOrder/${orderId}`)
         .then(res => res.json())
         .then(data => setSingleOrder(data[0]))
     },[]);
@@ -29,7 +29,7 @@ const SingleOrder = () => {
        console.log(id);
         console.log('hit inside');
         console.log(update);
-        fetch(`https://rocky-caverns-28961.herokuapp.com/updateStatus/${id}`,{
+        fetch(`https://paint-shack-server.vercel.app//updateStatus/${id}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

@@ -25,7 +25,7 @@ const Testimonials = () => {
   
 
   useEffect(() => {
-    fetch('https://rocky-caverns-28961.herokuapp.com/reviewList')
+    fetch('https://paint-shack-server.vercel.app//reviewList')
     .then(res => res.json())
     .then(data => {
       console.log(data);

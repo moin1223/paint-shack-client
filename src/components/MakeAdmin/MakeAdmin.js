@@ -12,7 +12,7 @@ const MakeAdmin = () => {
   const handleClick = () => {
     console.log("clicked");
 
-    fetch("https://rocky-caverns-28961.herokuapp.com/addAdmin", {
+    fetch("https://paint-shack-server.vercel.app//addAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(admin),

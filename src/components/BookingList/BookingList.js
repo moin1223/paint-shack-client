@@ -8,7 +8,7 @@ const BookingList = () => {
   const [specificUser, setSpecificUser] = useState([]);
 
   useEffect(() => {
-    fetch("https://rocky-caverns-28961.herokuapp.com/bookingList?email=" + loggedInUser.email)
+    fetch("https://paint-shack-server.vercel.app//bookingList?email=" + loggedInUser.email)
       .then((res) => res.json())
       .then((data) => {
           console.log(data);

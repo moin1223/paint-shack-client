@@ -22,7 +22,7 @@ const Sidebar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("https://rocky-caverns-28961.herokuapp.com/adminList")
+    fetch("https://paint-shack-server.vercel.app//adminList")
       .then((res) => res.json())
       .then((data) => {
         const checkAdmin = data.find(

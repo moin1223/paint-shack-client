@@ -10,7 +10,7 @@ const OurServices = () => {
 
 
   useEffect(() => {
-    fetch(`https://rocky-caverns-28961.herokuapp.com/service`)
+    fetch(`https://paint-shack-server.vercel.app//service`)
     .then(res => res.json())
     .then(data => {
       console.log(data);
